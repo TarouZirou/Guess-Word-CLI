@@ -1,5 +1,5 @@
 [package]
-name = "wordle"
+name = "Guess_Chars"
 version = "0.1.0"
 edition = "2024"
 
