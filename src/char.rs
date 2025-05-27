@@ -1,6 +1,28 @@
 use char_kind::{EXIST, MATCH, WRONG};
 use rand::Rng;
 
+#[test]
+fn show_chars() {
+	let mut vec: Vec<u8> = Vec::new();
+	for i in 0..26 {
+		vec.push(b'a' + i);
+	}
+
+	println!("{:?}", vec);
+	println!("{}", unsafe { String::from_utf8_unchecked(vec) });
+
+	vec = Vec::new();
+	for i in 0..26 {
+		vec.push(b'A' + i);
+	}
+	println!("{:?}", vec);
+	println!("{}", unsafe { String::from_utf8_unchecked(vec) });
+
+	for _ in 0..10 {
+		println!("{}", mk_chars().iter().collect::<String>());
+	}
+}
+
 pub type CharColor = usize;
 pub mod char_kind {
 	pub const WRONG: super::CharColor = 0;
