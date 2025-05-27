@@ -1,8 +1,5 @@
 use char_kind::{EXIST, MATCH, WRONG};
-use rand::{
-	distr::{Distribution, StandardUniform},
-	Rng,
-};
+use rand::Rng;
 
 pub type CharColor = usize;
 pub mod char_kind {
@@ -19,9 +16,9 @@ pub enum CharKind {
 
 pub const COLOR_TABLE: [&str; 3] = ["\x1b[34m", "\x1b[33m", "\x1b[32m"];
 ///0~25の乱数をアルファベットに変換、それを5回繰り返して、文字列を返す関数
-pub fn mk_word() -> String {
+pub fn mk_chars() -> Vec<char> {
 	let mut rng = rand::rng();
-	let rand_chars: String = (0..5)
+	let rand_chars: Vec<char> = (0..5)
 		.map(|_| (b'A' + rng.random_range(0..26)) as char)
 		.collect();
 	rand_chars
