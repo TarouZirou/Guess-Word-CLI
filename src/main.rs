@@ -6,6 +6,7 @@ mod render;
 use char::mk_chars;
 use rand::Rng;
 
+///TODO: input → check → loop
 fn main() {
 	let chars = mk_chars();
 	println!("Guess 5 Chars!");
